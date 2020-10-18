@@ -45,6 +45,17 @@ for await (const msg of rx) {
 }
 ```
 
+And a `src/miner.rollup` exists and contains code like the following:
+
+```js
+import resolve from '@rollup/plugin-node-resolve';
+
+export default {
+  input: 'src/miner.js',
+  plugins: [resolve()]
+};
+```
+
 Create a `rollup.config.js` [configuration file](https://www.rollupjs.org/guide/en/#configuration-files) and import the plugin:
 
 ```js
