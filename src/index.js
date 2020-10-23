@@ -15,13 +15,13 @@ export default function barrel(options = {}) {
 			const { options, warnings } = await loadConfigFile(config, { format: 'es' });
 			warnings.flush();
 
-			if (options.length != 1) {
+			if (options.length != 1 || options[0].output.length != 1) {
 				console.error(`${id} must produce a single output`);
 				return null;
 			}
 
 			const bundle = await rollup(options[0]);
-			const generated = await bundle.generate({ format: 'es' });
+			const generated = await bundle.generate(options[0].output[0]);
 			const output = generated.output[0];
 
 			return {
