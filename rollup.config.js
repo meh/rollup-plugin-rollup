@@ -4,6 +4,6 @@ export default {
     { file: 'dist/index.js', format: 'cjs' },
     { file: 'dist/index.mjs', format: 'es' }
   ],
-  external: ['path', 'fs-extra'],
+  external: ['path', 'rollup', 'rollup/dist/loadConfigFile'],
   plugins: []
 };
