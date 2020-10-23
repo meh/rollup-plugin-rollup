@@ -7,7 +7,7 @@ export default function barrel(options = {}) {
 		name: 'rollup-plugin-rollup',
 
 		async load(id) {
-			if (!id.endsWith('.rollup')) {
+			if (!id.endsWith('.rollup.js')) {
 				return null;
 			}
 
